@@ -1,0 +1,24 @@
+
+_____________________________________________________
+Orchard's Server-Side Load-Cell Output Control Manual
+-----------------------------------------------------
+
+
+ssh orchard1@10.0.1.22 'tmux new-session -d -s output; tmux send-keys "cd ~/Orchard/Data/; screen /dev/ttyUSB0 38400" C-m'
+
+-> this command uses SSH public key that is already set up to: 
+	send a command over SSH to orchard1; 
+	start a new tmux session which is detached and named 'output';
+	change working directory in this virtual session to a directory named 'Data';
+	send a command through the detached tmux session 'output' to open screen at the address and baud rate listed;  
+
+   C-m finalizes and presses "enter" for the command(s) that precedes it. Without C-m, the command is entered into the tmux session but not executed.
+
+-> I don't know how tmux knows you want to send-keys to the session 'output' without naming that session in the command. Oh well. It works.
+
+-> bash command 'tail' could be EXTREMELY useful for us. It only prints the last 10 lines of a file to standard output. Cool! Look into this more later.
+
+
+- Andrew McNeill, Orchard, August 28 2015
+
+

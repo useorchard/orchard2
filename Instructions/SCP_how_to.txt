@@ -1,0 +1,30 @@
+
+
+To transfer files using SCP, the syntax is as follows, depending on the case.
+
+
+To transfer a file from your host(1) to another host(2):
+
+	scp file_path user@host2:desired_directory_path
+
+
+
+To transfer a file from another host(2) to the directory you are currently in on your host(1):
+
+	scp user@host2:file_path .
+
+The "." is a shortcut denoting your working directory.
+To transfer a file to a different directory than working:
+
+	scp user@host2:file_path desired_directory_path
+
+
+
+To transfer a file from another host(2) to yet another host(3):
+
+	scp user@host2:file_path user@host3:desired_directory_path
+
+
+- Andrew McNeill, Orchard, August 28 2015
+
+

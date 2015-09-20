@@ -1,0 +1,13 @@
+sudo apt-get install python-dev
+
+sudo apt-get install libmysqlclient-dev
+
+then download http://sourceforge.net/projects/mysql-python/?source=dlp
+
+cd to unzipped directory
+
+sudo python setup.py install
+
+done!
+
+- Andrew McNeill, Orchard, August 24 2015
