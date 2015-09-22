@@ -4,8 +4,6 @@
 
 #-------------------------------
 
-#Import libraries.
-
 import serial
 import os
 import MySQLdb
@@ -14,13 +12,11 @@ import sys
 
 #-------------------------------
 
-#Query the database and store value into check variable.
-
 start = 0
 stop = 0
 light = 0
 
-print "Waiting for request to start serial port."
+print "(Start) - Waiting for request to start serial port."
 
 while start == 0:
   dbConn = MySQLdb.connect("localhost","orchard2","lobsterlobstercorn","Cart_0") or die ("Could not connect to database.")
@@ -31,21 +27,25 @@ while start == 0:
   time.sleep(1)  
 
 if start == 1:
-  print "Request received. Initializing serial port now."
-  #os.system('bash path_to_filename.sh')
-  
+  print "(Start) - Request received. Initializing script to start serial port now."
+  os.system('python /home/orchard2/Orchard/Python/retrieve.py')
+
+  print "(Start) - Waiting for request to close serial port and reset USB connection."
+
   while stop == 0:
     dbConn = MySQLdb.connect("localhost","orchard2","lobsterlobstercorn","Cart_0") or die ("Could not connect to database.")
     cursor = dbConn.cursor()
     cursor.execute("SELECT Stop FROM Command")
     stop = cursor.fetchone()[0]
     cursor.close()
+    if stop == 1:
+      print "(Start) - Stop requested from client. Closing serial port now."
+      os.system('bash /home/orchard2/Orchard/Python/close_orchard1.sh')
+      time.sleep(2)
+      print "Goodbye."
+      sys.exit()
     time.sleep(1)
 
-  if stop == 1:
-    print "Stop requested from client. Closing serial port now."
-    #os.system('bash path_to_filename.sh')
-    start = 0
 
-
+#-------------------------------
 #-------------------------------
