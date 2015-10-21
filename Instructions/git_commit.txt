@@ -1,0 +1,7 @@
+cd to ~/Orchard because it is the synced directory;
+
+git add -A to add every change to fork;
+
+git commit to finalize this;
+
+git push to push it to servers.

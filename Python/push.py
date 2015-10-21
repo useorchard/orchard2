@@ -12,13 +12,14 @@ import sys
 
 #-------------------------------
 
-push = 0
-stop = 0
+push = 1
+stop = 1
 message = 0
 
-print "(Push) - Waiting for request to push logfile to database."
+print "(Push) - Waiting a few seconds to push logfile to database."
+time.sleep(4)
 
-while push == 0:
+while push == 1:
   dbConn = MySQLdb.connect("localhost","orchard2","lobsterlobstercorn","Cart_0", local_infile = 1) or die ("Could not connect to database.")
   cursor = dbConn.cursor()
   cursor.execute("SELECT Push FROM Command")
@@ -26,23 +27,22 @@ while push == 0:
   cursor.close()
   time.sleep(1)
 
-while push == 1:
+while push == 2:
   if message == 0: 
     print "(Push) - Pushing logfile data to database."
   dbConn = MySQLdb.connect("localhost","orchard2","lobsterlobstercorn","Cart_0", local_infile = 1) or die ("Could not connect to database.")
   cursor = dbConn.cursor()
-  cursor.execute("TRUNCATE Weight")
-  cursor.execute('LOAD DATA LOCAL INFILE "/home/orchard2/Orchard/weight.txt" INTO TABLE Weight')
+  cursor.execute('LOAD DATA LOCAL INFILE "/home/orchard2/Orchard/weight.txt" IGNORE INTO TABLE Weight')
   dbConn.commit()
   cursor.execute("SELECT Stop FROM Command")
   stop = cursor.fetchone()[0]
   cursor.close()
   message = 1
-  if stop == 1:
+  if stop == 2:
     print "(Push) - Exiting push.py now."
     time.sleep(1)
     sys.exit()
-  time.sleep(5)
+  time.sleep(1)
 
 #------------------------------
 #-------------------------------
