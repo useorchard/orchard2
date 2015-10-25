@@ -42,6 +42,9 @@ if start == 2:
     if stop == 2:
       print "(Start) - Stop requested from client. Closing serial port now."
       os.system('bash /home/orchard2/Orchard/Python/close_orchard1.sh')
+      cursor = dbConn.cursor()
+      cursor.execute("TRUNCATE Weight")
+      cursor.close()
       time.sleep(2)
       print "Goodbye."
       sys.exit()
