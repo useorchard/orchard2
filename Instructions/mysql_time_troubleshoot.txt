@@ -1,0 +1,7 @@
+- try adding to my.cnf, section mysqld: skip-name-resolve
+
+- IPv4 vs IPv6
+
+- test system with wired CAT5 connections; see if slowness is intrinsic to us or to network
+
+- try INSERT DELAYED when uploading information from multiple sources

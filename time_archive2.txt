@@ -1,0 +1,38 @@
++----+----------------+-----------------+
+| Id | Description    | Timestamp       |
++----+----------------+-----------------+
+|  1 | Scan           | 1446416741.5245 |
+|  2 | MinIdQuery     | 1446416741.5345 |
+|  3 | ExpWeightQuery | 1446416738.7925 |
+|  4 | VerifyAttempt  | 1446416738.797  |
+|  5 | VerifyAttempt  | 1446416739.8024 |
+|  6 | VerifyAttempt  | 1446416740.8244 |
+|  7 | VerifyAttempt  | 1446416741.8305 |
+|  8 | VerifyAttempt  | 1446416742.8559 |
+|  9 | VerifyAttempt  | 1446416743.8654 |
+| 10 | VerifyAttempt  | 1446416744.8702 |
+| 11 | VerifyAttempt  | 1446416745.8908 |
+| 12 | VerifyAttempt  | 1446416746.905  |
+| 13 | VerifyAttempt  | 1446416747.9182 |
+| 14 | VerifyAttempt  | 1446416748.923  |
+| 15 | VerifyAttempt  | 1446416751.2585 |
+| 16 | VerifyAttempt  | 1446416760.9355 |
+| 17 | VerifyAttempt  | 1446416762.4709 |
+| 18 | VerifyAttempt  | 1446416764.1637 |
+| 19 | VerifyAttempt  | 1446416765.8586 |
+| 20 | VerifyAttempt  | 1446416767.5568 |
+| 21 | VerifyAttempt  | 1446416768.5716 |
+| 22 | VerifyAttempt  | 1446416772.9966 |
+| 23 | VerifyAttempt  | 1446416774.4091 |
+| 24 | VerifyAttempt  | 1446416776.0988 |
+| 25 | VerifyAttempt  | 1446416780.8436 |
+| 26 | VerifyAttempt  | 1446416782.3536 |
+| 27 | VerifyAttempt  | 1446416785.3266 |
+| 28 | VerifyAttempt  | 1446416786.8106 |
+| 29 | VerifyAttempt  | 1446416787.8227 |
+| 30 | VerifyAttempt  | 1446416788.8486 |
+| 31 | VerifyAttempt  | 1446416789.8579 |
+| 32 | VerifyAttempt  | 1446416790.8626 |
+| 33 | VerifyAttempt  | 1446416791.8786 |
+| 34 | TimeoutInsert  | 1446416791.8988 |
++----+----------------+-----------------+
